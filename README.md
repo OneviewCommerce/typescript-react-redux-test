@@ -1,6 +1,7 @@
 # OVC-Interview-Test
 
 ### Instructions
+Submit your project via a git repository link (ie a github repo)
 
 Please write a react typescript (or javascript) redux app to display a table using this api endpoint https://jsonplaceholder.typicode.com/users.  **The project should also include sufficient unit tests**.
 
