@@ -2,9 +2,9 @@
 
 ### Instructions
 
-Please write a react typescript (or javascript) redux app to display a table using this api endpoint https://jsonplaceholder.typicode.com/users.  **The project should also include sufficient unit tests**.
+Please write a react typescript (or javascript) state managed (redux or context) app to display a table using this api endpoint https://jsonplaceholder.typicode.com/users. **The project should also include sufficient unit tests**.
 
-Before submitting your assignment, please check to see if it works in https://codesandbox.io/ by importing the github link into a new project/Sandbox.  Here’s a link that describes how to do it https://codesandbox.io/docs/importing.
+Before submitting your assignment, please check to see if it works in https://codesandbox.io/ by importing the github link into a new project/Sandbox. Here’s a link that describes how to do it https://codesandbox.io/docs/importing.
 
 **Submit your work as a git repository and send us the link in an email when you've finished**
 
@@ -15,37 +15,35 @@ We'll evalulate mainly on code readability and code reusability.
 - Tools to use:
   - **create-react-app** https://github.com/facebook/create-react-app
   - **redux** - https://redux.js.org/
+  - **context** - https://reactjs.org/docs/context.html
   - **jest** - https://jestjs.io/
   - **redux-thunk** - https://github.com/reduxjs/redux-thunk
-  
 
-**Feature 1.** Develop a table with 4 columns `Name`, `Email`, `City`, and `Company` populating the rows with the response from the api endpoint https://jsonplaceholder.typicode.com/users.   
-     - The `Name` column should use `user.name`
-     - The `Email` column should use `user.email`
-     - The `City` column should use `user.address.city` 
-     - The `Company` column should use `user.company.name`.
+**Feature 1.** Develop a table with 4 columns `Name`, `Email`, `City`, and `Company` populating the rows with the response from the api endpoint https://jsonplaceholder.typicode.com/users.  
+ - The `Name` column should use `user.name` - The `Email` column should use `user.email` - The `City` column should use `user.address.city` - The `Company` column should use `user.company.name`.
 
-| Name        | Email           | City  | Company |
-| ------------- |:-------------:| -----:| -----:  |  
-| Leanne Graham      | Sincere@april.biz | Gwenborough |   Romaguera-Crona      |
-| Ervin Howell    | Shanna@melissa.tv      |   Wisokyburgh |    Deckow-Crist     |
-| zebra stripes | Nathan@yesenia.net      |    McKenziehaven |      Romaguera-Jacobson   |
+| Name          |       Email        |          City |            Company |
+| ------------- | :----------------: | ------------: | -----------------: |
+| Leanne Graham | Sincere@april.biz  |   Gwenborough |    Romaguera-Crona |
+| Ervin Howell  | Shanna@melissa.tv  |   Wisokyburgh |       Deckow-Crist |
+| zebra stripes | Nathan@yesenia.net | McKenziehaven | Romaguera-Jacobson |
 
-**Feature 2.** Add an input field to search based on name.  For instance if "Lea" is entered, only the "Leanne Graham" row should show in the table.
+**Feature 2.** Add an input field to search based on name. For instance if "Lea" is entered, only the "Leanne Graham" row should show in the table.
 
-| Name        | Email           | City  | Company |
-| ------------- |:-------------:| -----:| -----:  |  
-| Leanne Graham      | Sincere@april.biz | Gwenborough |   Romaguera-Crona |
+| Name          |       Email       |        City |         Company |
+| ------------- | :---------------: | ----------: | --------------: |
+| Leanne Graham | Sincere@april.biz | Gwenborough | Romaguera-Crona |
 
-**Feature 3.** Make the rows clickable.  When a row is clicked, the website should show the user's posts.  You can utilize this api, `https://jsonplaceholder.typicode.com/posts?userId=1` for retrieve a user's posts.
-   
+**Feature 3.** Make the rows clickable. When a row is clicked, the website should show the user's posts. You can utilize this api, `https://jsonplaceholder.typicode.com/posts?userId=1` for retrieve a user's posts.
+
 <h3>Leanne Graham's Posts:</h3>
 
-| Title        | Body           |
-| ------------- |:-------------:|
-| sunt aut facere repellat provident occaecati excepturi optio reprehenderit      | quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto |
+| Title                                                                      |                                                                               Body                                                                                |
+| -------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| sunt aut facere repellat provident occaecati excepturi optio reprehenderit | quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto |
 
-`https://jsonplaceholder.typicode.com/users` gives back json looking like the following 
+`https://jsonplaceholder.typicode.com/users` gives back json looking like the following
+
 ```json
 [
   {
@@ -118,9 +116,10 @@ We'll evalulate mainly on code readability and code reusability.
     }
   }
 ]
-  ```
+```
 
-`https://jsonplaceholder.typicode.com/posts?userId=1` responds with the following 
+`https://jsonplaceholder.typicode.com/posts?userId=1` responds with the following
+
 ```json
 [
   {
